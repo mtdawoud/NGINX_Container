@@ -1,7 +1,7 @@
 server {
         listen 80 default_server;
         listen [::]:80 default_server;
-        server_name automation-challenge.cgi.com www.automation-challenge.cgi.com;
+        server_name dawoud-website.com www.dawoud-website.com;
         return 301 https://$host$request_uri;
 }
 server {
@@ -12,13 +12,13 @@ server {
         ssl_certificate_key "/etc/nginx/ssl/webserver.key";
         root /usr/share/nginx/html;
         index index.html index.htm index.nginx-debian.html;
-        server_name automation-challenge.cgi.com www.automation-challenge.cgi.com;
+        server_name dawoud-website.com www.dawoud-website.com;
 
-        if ($host = www.automation-challenge.cgi.com) {
+        if ($host = www.dawoud-website.com) {
             return 301 https://$host$request_uri;
         }
 
-        if ($host = automation-challenge.cgi.com) {
+        if ($host = dawoud-website.com) {
             return 301 https://$host$request_uri;
         }
 
